@@ -9,7 +9,7 @@ type ListProps = {
 }
 
 export const List: FC<ListProps> = ({ items }) => {
-  const { handleRemove } = useList();
+  const { handleRemove, handleCompleted } = useList();
 
   if (!items || !items.length) {
     return null
@@ -19,15 +19,32 @@ export const List: FC<ListProps> = ({ items }) => {
     <ul className={style.list}>
       {
         items.map((task) => (
-          <li key={task.id} className={style.item}>
-            <span>{task.name}</span>
+          <li
+            key={task.id}
+            className={style.item}
+            role='checkbox'
+            onClick={() => {handleCompleted(task.id, !task.completed)}}
+          >
+            <div className={style.content}>
+              <input
+                type="checkbox"
+                name='item'
+                className={style.checkbox}
+                checked={task.completed}
+              />
+              <span
+                className={task.completed ? style.checked : undefined}
+              >
+                {task.name}
+              </span>
+            </div>
             <button
               type='button'
               onClick={() => {
                 handleRemove(task.id);
               }}
             >
-              Удалить
+              X
             </button>
           </li>
         ))

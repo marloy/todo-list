@@ -1,5 +1,5 @@
 import {useAppDispatch} from "store/store.ts";
-import {remove} from "features/tasks/tasksSlice.ts";
+import {remove, update} from "features/tasks/tasksSlice.ts";
 
 export const useList = () => {
   const dispatch = useAppDispatch();
@@ -8,7 +8,17 @@ export const useList = () => {
     dispatch(remove(id))
   }
 
+  const handleCompleted = (id: string, completed: boolean) => {
+    dispatch(update({
+      id,
+      changes: {
+        completed,
+      }
+    }))
+  }
+
   return {
-    handleRemove
+    handleRemove,
+    handleCompleted
   }
 }
