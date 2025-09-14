@@ -10,6 +10,7 @@ export const Form = () => {
       onSubmit={handleSubmit}
     >
       <input
+        autoComplete='off'
         className={style.input}
         type="text"
         name="task"
