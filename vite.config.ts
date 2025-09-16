@@ -8,4 +8,9 @@ export default defineConfig({
     react(),
     tsconfigPaths()
   ],
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+  },
 })

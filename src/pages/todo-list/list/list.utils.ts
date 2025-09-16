@@ -11,9 +11,7 @@ export const useList = () => {
   const handleCompleted = (id: string, completed: boolean) => {
     dispatch(update({
       id,
-      changes: {
-        completed,
-      }
+      changes: { completed }
     }))
   }
 

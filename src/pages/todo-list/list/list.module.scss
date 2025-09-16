@@ -6,15 +6,9 @@
   gap: 12px;
 }
 
-.item {
+.list-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 8px;
-  border: 1px solid #ccc;
-  border-radius: 16px;
-  padding: 8px;
-  cursor: pointer;
 }
 
 .checkbox {
@@ -22,10 +16,20 @@
   height: 16px;
 }
 
-.content {
+.label {
   display: flex;
   align-items: center;
   gap: 16px;
+  padding: 12px;
+  flex-grow: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s;
+  border: 1px solid #ccc;
+}
+
+.label:hover {
+  background-color: #f0f0f0;
 }
 
 .checked {
