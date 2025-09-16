@@ -19,25 +19,21 @@ export const List: FC<ListProps> = ({ items }) => {
     <ul className={style.list}>
       {
         items.map((task) => (
-          <li
-            key={task.id}
-            className={style.item}
-            role='checkbox'
-            onClick={() => {handleCompleted(task.id, !task.completed)}}
-          >
-            <div className={style.content}>
+          <li className={style.listItem} key={task.id}>
+            <label className={style.label}>
               <input
+                data-id={task.id}
                 type="checkbox"
-                name='item'
                 className={style.checkbox}
                 checked={task.completed}
+                onChange={(e) => handleCompleted(task.id, e.target.checked)}
               />
               <span
                 className={task.completed ? style.checked : undefined}
               >
                 {task.name}
               </span>
-            </div>
+            </label>
             <button
               type='button'
               onClick={() => {

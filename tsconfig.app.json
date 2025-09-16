@@ -4,8 +4,10 @@
     "paths": {
       "entities/*": ["./src/domain/entities/*"],
       "store/*": ["./src/store/*"],
-      "features/*": ["./src/features/*"]
+      "features/*": ["./src/features/*"],
+      "helpers/*": ["./src/helpers/*"]
     },
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "useDefineForClassFields": true,
