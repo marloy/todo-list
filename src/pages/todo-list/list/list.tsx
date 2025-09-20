@@ -35,6 +35,7 @@ export const List: FC<ListProps> = ({ items }) => {
               </span>
             </label>
             <button
+              data-testId='remove-button'
               type='button'
               onClick={() => {
                 handleRemove(task.id);
